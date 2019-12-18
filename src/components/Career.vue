@@ -10,7 +10,10 @@
                 <span class="timelineDot"></span>
                 <div class="careerTitle">{{careerItem.title}}</div>
                 <div class="careerSubtitle">
-                    <span>{{careerItem.establishment}}</span>,&nbsp;
+                    <span>
+                        <a :href="careerItem.establishmentLink" target="blank" v-if="careerItem.establishmentLink">{{careerItem.establishment}}</a>
+                        <span v-else>{{careerItem.establishment}}aa</span>
+                    </span>,&nbsp;
                     <span>{{careerItem.location}}</span>
                 </div>
                 <div class="careerDates">
@@ -28,7 +31,6 @@
 <style scoped>
     div#careerContainer {
         background: white;
-        margin-top: 15px;
         padding: 35px 30px;
         max-width: 800px;
         margin-right: auto;
@@ -62,10 +64,12 @@
     }
 
     div.careerTitle {
+        top: -3px;
         line-height: 1rem;
     }
 
-    div.careerSubtitle {
+    div.careerSubtitle, div.careerSubtitle a {
+        text-decoration: none;
         color: #b3b4b7;
         margin-top: 3px;
     }
@@ -89,6 +93,7 @@ export default {
         careerItem: [
             {
                 establishment: 'Polytech',
+                establishmentLink: 'https://www.polytech.umontpellier.fr/',
                 title: 'Diplôme d\'Ingénieur en Informatique et Gestion',
                 location: 'Montpellier',
                 dateDebut: '2017',
@@ -97,6 +102,7 @@ export default {
             },
             {
                 establishment: 'IUT',
+                establishmentLink: 'https://iut-montpellier-sete.edu.umontpellier.fr/',
                 title: 'DUT Informatique',
                 location: 'Montpellier',
                 dateDebut: '2015',
@@ -105,6 +111,7 @@ export default {
             },
             {
                 establishment: 'Lycée Frédéric Bazille',
+                establishmentLink: 'https://epl.montpellier-orb-herault.educagri.fr/nos-sites/lycee-frederic-bazille-agropolis/',
                 title: 'Baccalauréat Scientifique',
                 location: 'Montpellier',
                 dateDebut: '2012',

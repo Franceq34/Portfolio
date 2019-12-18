@@ -4,12 +4,12 @@
         <img src="../assets/profile.png" alt="Photo de profil" id="profilePicture"/>
       </div>
     <div id="infosContainer">
-      <div id="nameContainer">Quentin FRANCE</div>
+      <div id="nameContainer">Quentin <b>FRANCE</b></div>
       <div id="locationContainer">Montpellier, France</div>
       <div id="linksContainer">
-        <img src="../assets/icons/cv.svg" alt="Logo CV"/>
-        <img src="../assets/icons/linkedin.svg" alt="Logo Linkedin"/>
-        <img src="../assets/icons/github.svg" alt="Logo Github"/>
+        <a class="disabled" title="Bientôt disponible !"><img src="../assets/icons/cv.svg" alt="Logo CV"/></a>
+        <a href="https://www.linkedin.com/in/quentin-france-b11723107/" target="blank"><img src="../assets/icons/linkedin.svg" alt="Logo Linkedin"/></a>
+        <a href="https://github.com/Franceq34" target="blank"><img src="../assets/icons/github.svg" alt="Logo Github"/></a>
       </div>
     </div>
     </div>
@@ -18,7 +18,7 @@
 <style scoped>
 
   div#headerContainer {
-    margin-top: 50px;
+    margin-top: 25px;
   }
 
   div#imgContainer {
@@ -30,6 +30,14 @@
     width: 150px;
     height: 150px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+    transition: 0.5s;
+  }div#imgContainer:hover {
+    scale:1.07;
+  }
+
+  a.disabled img {
+    opacity: 0.4;
+    cursor: default!important;
   }
 
   img#profilePicture {
@@ -64,6 +72,13 @@
     width: 25px;
     margin: 0px 4px;
     cursor: pointer;
+    transition: 0.1s;
+  }
+  div#linksContainer img:hover {
+    scale:1.13;
+  }
+  div#linksContainer .disabled img:hover {
+    scale:1;
   }
 
 </style>
